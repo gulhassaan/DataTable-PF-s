@@ -53,6 +53,13 @@
  .table-wrapper {
   max-width: 100%; 
   overflow-x: auto; 
+  margin-bottom: 5rem;
+}
+footer{
+  display: flex;
+  justify-content: center;
+  background-color: gray;
+  padding: 2rem;
 }
 
 /* Media query for mobile devices */
