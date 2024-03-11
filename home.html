@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Data Table</title>
+  <link rel="stylesheet" type="text/css" href="home.css">
+  <link rel="stylesheet" type="text/css" href="sort.js">
+</head>
+<body>
+  <div class="Heading">
+    <h>Data Table</h>
+  </div>
+
+
+  <div class="div-wrapper">
+    <label for="sortDropdown" class="label-sort">Sort by Alphabetically</label>
+    <select id="sortDropdown" class="select-sort">
+      <option value="asc">Ascending</option> 
+      <option value="desc">Descending</option>
+    </select>
+</div>
+
+
+   <div class="table-wrapper">
+  <table class="responsive-table" id="myTable">
+    <thead>
+      <tr>
+        <th>Select</th>
+        <th>Product Name</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Vendor</th>
+        <th>In Stock</th>
+        <th>Buying Price</th>
+        <th>Sale Price</th>
+        <th>Quantity</th>
+        <th>Product Type</th>
+        <th>Shipping Rate</th>
+        <th>Refill Limit</th>
+        <th>Product Location</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <input type="checkbox"/>
+        </td>
+        <td>Mobile</td>
+        <td>Oneplus</td>
+        <td>Oneplus 8</td>
+        <td>Vendor 1</td>
+        <td>30</td>
+        <td>60000</td>
+        <td>70000</td>
+        <td>50</td>
+        <td>Used</td>
+        <td>2000</td>
+        <td>35</td>
+        <td>Gulberg</td>
+        <td>
+          <div class="all-button">
+            <button>Add Vendor</button>
+            <button>Add Product</button>
+            <button>Edit Product</button>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td> <input type="checkbox"/></td>
+        <td>Watch</td>
+        <td>Watch ultra</td>
+        <td>Watch ultra 7s</td>
+        <td>Vendor 2</td>
+        <td>100</td>
+        <td>5000</td>
+        <td>8000</td>
+        <td>20</td>
+        <td>Original</td>
+        <td>500</td>
+        <td>100</td>
+        <td>Hafeez center</td>
+        <td>
+          <div class="all-button">
+            <button>Add Vendor</button>
+            <button>Add Product</button>
+            <button>Edit Product</button>
+          </div>
+        </td>
+      </tr>
+
+
+
+      <tr>
+        <td> <input type="checkbox"/></td>
+        <td>Laptop</td>
+        <td>Lenovo</td>
+        <td>Lenovo T470s</td>
+        <td>Vendor 3</td>
+        <td>1</td>
+        <td>50000</td>
+        <td>60000</td>
+        <td>10</td>
+        <td>A+</td>
+        <td>1000</td>
+        <td>10</td>
+        <td>Lahore</td>
+        <td>
+          <div class="all-button">
+            <button>Add Vendor</button>
+            <button>Add Product</button>
+            <button>Edit Product</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  
+ 
+    
+  </table>
+</div>
+  <script>
+ document.getElementById('sortDropdown').addEventListener('change', function() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTable");
+  switching = true;
+  // Run loop until no switching is needed
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+    // Loop to go through all rows
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      // Get the two elements to compare, one from current row and one from the next
+      x = rows[i].getElementsByTagName("TD")[1];
+      y = rows[i + 1].getElementsByTagName("TD")[1];
+      // Check if the two rows should switch place, based on the direction, asc or desc
+      if (this.value == 'asc') {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          shouldSwitch = true;
+          break;
+        }
+      } else if (this.value == 'desc') {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      // If a switch has been marked, make the switch and mark that a switch has been done
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+});
+
+  </script>
+  
+  
+</body>
+</html>

@@ -1,0 +1,107 @@
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Heading{
+ display: flex;
+ justify-content: center;
+ font-size: 30px;
+ background-color: rgba(0, 0, 0, 0.598);
+ color: white;
+ padding: 20px;
+}
+
+.responsive-table {
+    width: 100%;
+    border-collapse: collapse; /*That merges the colums*/
+  }
+  
+  .responsive-table th, .responsive-table td {
+    border: 1px solid gray;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .responsive-table th {
+    background-color: orange;
+    color: black;
+  }
+  .all-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  button{
+    background-color: skyblue;
+    border: none;
+    padding: 10px;
+    margin: 3px;
+    color: white;
+    font-weight: bolder;
+    border-radius: 5px;
+    font-size: 10px;
+  }
+  button:hover{
+    cursor: pointer;
+    color: black;
+    transform: scale(1.1);
+ }
+ .table-wrapper {
+  max-width: 100%; 
+  overflow-x: auto; 
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 700px) {
+  .table-wrapper {
+    width: 100%; 
+  }
+}
+
+
+  
+ /*For filter this styling blongs to*/
+.div-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.label-sort {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.select-sort {
+  width: 20%;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: white;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+/* Custom styles for options */
+.select-sort option {
+  padding: 10px;
+  background-color: white;
+  border: none;
+}
+
+/* Hover effect for options */
+.select-sort option:hover {
+  background-color: #e9e9e9;
+}
