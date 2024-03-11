@@ -59,7 +59,7 @@ footer{
   display: flex;
   justify-content: center;
   background-color: gray;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 /* Media query for mobile devices */
